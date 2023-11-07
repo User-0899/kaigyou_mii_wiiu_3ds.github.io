@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://kazuki-4ys.github.io/web_apps/MiiInfoEditorCTR/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mii Info Editor CTR</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./Mii Info Editor CTR_files/style.css">
+    <link rel="shortcut icon" href="https://kazuki-4ys.github.io/web_apps/MiiInfoEditorLite/img/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="https://kazuki-4ys.github.io/web_apps/MiiInfoEditorLite/img/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="https://kazuki-4ys.github.io/web_apps/MiiInfoEditorLite/img/favicon.png">
+</head>
+
+<body>
+    <div id="mainForm">
+    <input type="file" id="open" accept=".3dsmii,.miigx,.MII,.mae,.rkg"><button id="openBtn">open Mii data</button>
+    <input type="file" id="QrRead" accept="image/jpeg,image/png,image/bmp,image/gif"><button id="QrReadBtn">open QR code</button>
+    <button id="qrCameraBtn">scan QR code</button><br>
+    <button id="save">save</button><button id="QrGen">generate QR code</button>
+    <div id="form">
+    <div id="main">
+        <div class="nameForm">
+            <div id="mn">Mii name:</div><div id="mnt"><textarea id="miiName" name="miiName" rows="5" cols="33"></textarea>
+<select name="miiName" size="5"></select></div>
+            <div id="cn">Creator name:</div><div id="cnt"><input id="creatorName" maxlength="10"></div>
+        </div>
+        <div class="idForm">
+            <div id="mi">Mii ID:</div><div id="mit"><input class="idTextArea" id="m0" maxlength="2">-<input class="idTextArea" id="m1" maxlength="2">-<input class="idTextArea" id="m2" maxlength="2">-<input class="idTextArea" id="m3" maxlength="2"></div>
+            <div id="ci">Console ID:</div><div id="cit0"><input class="idTextArea" id="c0" maxlength="2">-<input class="idTextArea" id="c1" maxlength="2">-<input class="idTextArea" id="c2" maxlength="2">-<input class="idTextArea" id="c3" maxlength="2">-</div>
+            <div id="cit1"><input class="idTextArea" id="c4" maxlength="2">-<input class="idTextArea" id="c5" maxlength="2">-<input class="idTextArea" id="c6" maxlength="2">-<input class="idTextArea" id="c7" maxlength="2"></div>
+            <div id="maci">Creator MAC:</div><div id="macit0"><input class="idTextArea" id="mac0" maxlength="2">-<input class="idTextArea" id="mac1" maxlength="2">-<input class="idTextArea" id="mac2" maxlength="2">-</div>
+            <div id="macit1"><input class="idTextArea" id="mac3" maxlength="2">-<input class="idTextArea" id="mac4" maxlength="2">-<input class="idTextArea" id="mac5" maxlength="2"></div>
+        </div>
+        <div class="sliderForm">
+            <div id="h">Height</div><div id="hs"><input type="range" value="64" min="0" max="127" step="1" id="height"></div><div id="ht"><input maxlength="3" size="2" id="heightNum"></div>
+            <div id="w">Weight</div><div id="ws"><input type="range" value="64" min="0" max="127" step="1" id="weight"></div><div id="wt"><input maxlength="3" size="2" id="weightNum"></div>
+        </div>
+        <div class="checkboxForm">
+            <input type="checkbox" id="specialMii">
+            <label for="specialMii">Special Mii</label>
+            <input type="checkbox" id="profanityMii">
+            <label for="profanityMii">Profanity Mii</label>
+        </div>
+        <div class="versionForm">
+            Version:
+            <select id="version">
+                <option value="1">Wii</option>
+                <option value="2">DSi</option>
+                <option value="3">3DS</option>
+                <option value="4">WiiU</option>
+            </select>
+        </div>
+        Favorite color
+        <div class="colorForm">
+            <div id="colorButton0" class="selectColor"></div>
+            <div id="colorButton1" class="notSelectColor"></div>
+            <div id="colorButton2" class="notSelectColor"></div>
+            <div id="colorButton3" class="notSelectColor"></div>
+            <div id="colorButton4" class="notSelectColor"></div>
+            <div id="colorButton5" class="notSelectColor"></div>
+        </div>
+        <div class="colorForm">
+            <div id="colorButton6" class="notSelectColor"></div>
+            <div id="colorButton7" class="notSelectColor"></div>
+            <div id="colorButton8" class="notSelectColor"></div>
+            <div id="colorButton9" class="notSelectColor"></div>
+            <div id="colorButton10" class="notSelectColor"></div>
+            <div id="colorButton11" class="notSelectColor"></div>
+        </div>
+    </div>
+    <div class="sub">
+        Birthday
+        <div class="birthForm">
+            <div>
+                Month
+                <p><input id="month" maxlength="2"></p>
+            </div>
+            <div>
+                Day
+                <p><input id="day" maxlength="2"></p>
+            </div>
+        </div>
+        <p>Gender
+        <br><button id="gender">Male</button></p>
+        <p>Sharing
+        <br><button id="sharing">Yes</button></p>
+        <p>Allow copying
+        <br><button id="allowCopying">Yes</button></p>
+        <p>Favorite
+        <br><button id="favorite"><img src="./Mii Info Editor CTR_files/none.png"></button></p>
+        <p>Region lock
+        <br><select id="regionLock">
+            <option value="0">None</option>
+            <option value="1">JPN</option>
+            <option value="2">USA</option>
+            <option value="3">EUR</option>
+        </select></p>
+        <p>Character set
+        <br><select id="characterSet">
+            <option value="0">JPN+USA+EUR</option>
+            <option value="1">CHN</option>
+            <option value="2">KOR</option>
+            <option value="3">TWN</option>
+        </select></p>
+    </div>
+    <div class="miiPreviewForm">
+        <img id="miiPreview" src="./Mii Info Editor CTR_files/image.png">
+        <p><button id="saveImage">show high quality preview</button></p>
+        <p><button id="saveAsStudio">save as .studio</button></p>
+    </div>
+    </div>
+    </div>
+    <div id="qrForm">
+        <div>
+            <button id="QrClose">close</button><button id="QrSave">save QR code</button>
+        </div>
+        <img id="qrCode">
+    </div>
+    <div id="qrReadWait">
+        画像を処理しています。しばらくお待ちください...<br>
+        Please stand by...
+    </div>
+    <div id="qrCamera">
+        <div>
+            <button id="qrCameraClose">close</button>
+        </div>
+        <video id="camera" width="400" height="400" muted=""></video>
+    </div>
+<script src="./Mii Info Editor CTR_files/utils.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/asmcrypto.all.es5.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/jsQR.min.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/qrcodegen.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/encode.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/mii.js.ダウンロード"></script>
+<script src="./Mii Info Editor CTR_files/script.js.ダウンロード"></script>
+
+</body></html>
